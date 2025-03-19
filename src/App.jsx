@@ -1,13 +1,14 @@
-import { useState } from 'react'
-import './App.css'
+// import { useState } from 'react'
+import './App.scss'
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
-    <>
-    sup
-    </>
+    <div className="app-container"> 
+    
+    </div>
+    
   )
 }
 

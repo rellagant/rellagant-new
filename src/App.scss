@@ -1,0 +1,13 @@
+@use "../src/styles/partials/variables" as *;
+@use "../src/styles/partials/globals" as *;
+@use "../src/styles/partials/mixins" as *;
+
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-primary;
+  background-image: repeating-radial-gradient(#0c0a0a 80%, #2f312f 90%, #3f4549 90%);
+  background-size: 4.0625rem 4.0625rem;
+}
+
+
