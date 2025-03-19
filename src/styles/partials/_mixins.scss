@@ -1,0 +1,27 @@
+@use "./variables" as *;
+@use "./typography" as *;
+
+//media queries
+@mixin mobile {
+  @media (min-width: $mobile-breakpoint) and (max-width: calc($tablet-breakpoint - 0.01rem)) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tablet-breakpoint) and (max-width: calc($desktop-breakpoint - 0.01rem)) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-breakpoint) and (max-width: calc($desktop-large-breakpoint - 0.01rem)) {
+    @content;
+  }
+}
+
+@mixin desktop-large {
+  @media (min-width: $desktop-large-breakpoint) {
+    @content;
+  }
+}

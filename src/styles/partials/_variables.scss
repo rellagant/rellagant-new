@@ -1,0 +1,38 @@
+$mobile-breakpoint: 20rem;
+$tablet-breakpoint: 48rem;
+$desktop-breakpoint: 80rem;
+$desktop-large-breakpoint: 120rem;
+
+$color-primary: #000;
+$color-secondary: hsl(0, 0%, 100%);
+$color-tertiary: #ccc;
+$mercury: #e1e1e1;
+$alabaster: #fafafa;
+$dark-grey: #333;
+
+$border-divider: 1px solid $mercury;
+
+// button variables
+$button-padding: 0.55rem 0.5rem;
+$button-border-radius: 3.125rem;
+$button-font-size: 1.2rem;
+$button-icon-size: 1.2rem;
+$button-transition: background-color 0.3s ease;
+
+// button colors
+$button-primary-bg: $color-primary;
+$button-primary-text: $color-secondary;
+$button-primary-hover: $dark-grey;
+
+$button-secondary-bg: $color-secondary;
+$button-secondary-text: $color-primary;
+$button-secondary-hover: $mercury;
+
+$button-tertiary-bg: transparent;
+$button-tertiary-text: $color-primary;
+$button-tertiary-hover: $alabaster;
+
+// header variables
+$header-padding: 1rem;
+$header-font-size: 1.5rem;
+$header-line-height: 1.2;
