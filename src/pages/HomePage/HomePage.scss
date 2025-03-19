@@ -2,3 +2,147 @@
 @use "../../styles/partials/globals" as *;
 @use "../../styles/partials/mixins" as *;
 
+.home-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  background-image: repeating-radial-gradient(
+    #0c0a0a 80%,
+    #2f312f 90%,
+    #3f4549 90%
+  );
+  background-size: 4.0625rem 4.0625rem;
+  font-family: "Helvetica", "Arial", sans-serif;
+  text-decoration: none;
+
+  &__container {
+    @include tablet {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+  }
+
+  &__container-left {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__container-tablet {
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 0.2rem;
+      align-items: flex-start;
+    }
+  }
+  &__content {
+    text-align: center;
+    color: white;
+  }
+
+  &__title {
+    text-align: center;
+    color: white;
+    font-size: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    @include tablet {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__profile-photo {
+    width: 9.375rem;
+    border-radius: 3%;
+    margin-top: 5rem;
+    margin-bottom: 1.25rem;
+    @include tablet {
+      width: 13rem;
+      border-radius: 2%;
+      @include desktop {
+        margin-top: 20rem;
+      }
+    }
+  }
+
+  &__container-right {
+    display: flex;
+    justify-content: center;
+    margin-left: 0.7rem;
+  }
+
+  &__social-icons {
+    text-decoration: none;
+    margin-top: 0;
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    color: white;
+    text-decoration: none;
+    margin-right: 0.25rem;
+  }
+
+  &__container-bottom {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__shrinefinder-icon {
+    margin-top: 0.5rem;
+    width: 5rem;
+    height: 5rem;
+    @include tablet {
+      width: 7rem;
+      height: 7rem;
+    }
+  }
+
+  &__container-modal {
+    border: 0.0625rem solid $dark-grey;
+    border-radius: 5%;
+    padding: 1.5rem;
+    background-color: $alabaster;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 16.75rem;
+    height: 8rem;
+    z-index: 10;
+    margin: auto;
+    @include tablet {
+      width: 20rem;
+      height: 11rem;
+    }
+    @include desktop {
+      width: 27rem;
+      height: 10rem;
+    }
+  }
+
+  &__container-title {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  &__container-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+
+  &__container-content {
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+  }
+}
