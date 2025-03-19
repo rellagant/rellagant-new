@@ -105,6 +105,7 @@
   }
 
   &__container-modal {
+    display: none;
     border: 0.0625rem solid $dark-grey;
     border-radius: 5%;
     padding: 1.5rem;
@@ -126,6 +127,9 @@
       width: 27rem;
       height: 10rem;
     }
+  }
+  &__container-modal.modalOpen {
+    display: block;
   }
 
   &__container-title {

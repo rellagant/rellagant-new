@@ -92,7 +92,12 @@ export default function HomePage() {
           <button onClick={openModal} className="buy-coffee-btn">
             Sponsor my ☕️ habit
           </button>
-          <div className="home-page__container-modal">
+          <div
+            className={
+              isModalOpen
+                ? "home-page__container-modal modalOpen"
+                : "home-page__container-modal"
+            }>
             <h1 className="home-page__container-title">Give me Money</h1>
             <div className="home-page__container-grid">
               <div className="home-page__container-content">☕️</div>
@@ -105,3 +110,4 @@ export default function HomePage() {
     </div>
   );
 }
+// condition ? exprIfTrue : exprIfFalse
