@@ -18,6 +18,21 @@
   &__container {
     @include tablet {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    @include desktop {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    @include desktop-large {
+      display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
     }
@@ -37,6 +52,19 @@
       justify-content: flex-end;
       gap: 0.2rem;
       align-items: flex-start;
+    }
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 0.2rem;
+    }
+
+    @include desktop-large {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 0.2rem;
     }
   }
   &__content {
@@ -66,6 +94,7 @@
       border-radius: 2%;
       @include desktop {
         margin-top: 20rem;
+        border-radius: 2%;
       }
     }
   }
@@ -103,13 +132,23 @@
       height: 7rem;
     }
   }
+  &__container-coffee {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  &__buy-coffee-btn {
+    border: none;
+    border-radius: 5rem;
+    padding: 0.5rem;
+  }
 
   &__container-modal {
     display: none;
     border: 0.0625rem solid $dark-grey;
-    border-radius: 5%;
+    border-radius: 1rem;
     padding: 1.5rem;
-    background-color: $alabaster;
+    color: $alabaster;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -119,6 +158,8 @@
     height: 8rem;
     z-index: 10;
     margin: auto;
+    background: linear-gradient(135deg, #a0bae7, #977197);
+    box-shadow: 0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.9);
     @include tablet {
       width: 20rem;
       height: 11rem;
@@ -130,6 +171,10 @@
   }
   &__container-modal.modalOpen {
     display: block;
+    @include desktop {
+      top: 3.75rem;
+
+    }
   }
 
   &__container-title {

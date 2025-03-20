@@ -1,11 +1,13 @@
 import "./HomePage.scss";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaGithub, FaLinkedin, FaInstagram, FaTumblr } from "react-icons/fa";
 import rella from "../../assets/images/Rellasnapseed.jpg";
 import shrinefinder from "../../assets/shrinefinder-wht.svg";
 //import { loadMicroPayments } from "@todaqmicro/payment-js"
+
 export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const modalRef = useRef(null);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -14,6 +16,21 @@ export default function HomePage() {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        closeModal();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   // useEffect(() => {
   //     const hotdogs = async function () {
   //       const micro = await loadMicroPayments(
@@ -88,26 +105,25 @@ export default function HomePage() {
               />
             </a>
           </div>
-          <div className="home-page__container-coffee" id="hotdogs"></div>
-          <button onClick={openModal} className="buy-coffee-btn">
+        </div>
+        <div className="home-page__container-coffee" id="hotdogs">
+          <button onClick={openModal} className="home-page__buy-coffee-btn">
             Sponsor my ☕️ habit
           </button>
-          <div
-            className={
-              isModalOpen
-                ? "home-page__container-modal modalOpen"
-                : "home-page__container-modal"
-            }>
-            <h1 className="home-page__container-title">Give me Money</h1>
-            <div className="home-page__container-grid">
-              <div className="home-page__container-content">☕️</div>
-              <div className="home-page__container-content">🥀</div>
-              <div className="home-page__container-content">🛩️</div>
+          {isModalOpen && (
+            <div
+              className="home-page__container-modal modalOpen"
+              ref={modalRef}>
+              <h1 className="home-page__container-title">Player's Choice</h1>
+              <div className="home-page__container-grid">
+                <div className="home-page__container-content">☕️</div>
+                <div className="home-page__container-content">🥀</div>
+                <div className="home-page__container-content">🛩️</div>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>
   );
 }
-// condition ? exprIfTrue : exprIfFalse
